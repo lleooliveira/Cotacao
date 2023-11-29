@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Alternador de Links</title>
+    <title>Alternador de Iframes</title>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .iframe-fullscreen {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <a href="" id="linkDinamico">Visitar Link</a>
+    <iframe class="iframe-fullscreen" id="iframeDinamico" src=""></iframe>
 
     <script>
         var links = [
-            'https://app.powerbi.com/reportEmbed?reportId=89ec232a-583f-4920-a67d-56053ceddb9f&autoAuth=true&ctid=ef215a11-96e5-4203-8b4e-a8ae1bbfcc43',
-            'https://app.powerbi.com/reportEmbed?reportId=8d1a7fa9-13f8-45f9-a2ec-fdb14c683604&autoAuth=true&ctid=ef215a11-96e5-4203-8b4e-a8ae1bbfcc43'
+            'https://app.powerbi.com/reportEmbed?reportId=89ec232a-583f-4920-a67d-56053ceddb9f&autoAuth=true&ctid=ef215a11-96e5-4203-8b4e-a8ae1bbfcc43', // Link 1
+            'https://app.powerbi.com/reportEmbed?reportId=8d1a7fa9-13f8-45f9-a2ec-fdb14c683604&autoAuth=true&ctid=ef215a11-96e5-4203-8b4e-a8ae1bbfcc43' // Link 2 (substitua pelo seu segundo link)
         ];
 
         var currentIndex = 0;
-        document.getElementById('linkDinamico').href = links[currentIndex];
+        document.getElementById('iframeDinamico').src = links[currentIndex];
 
-        function alternarLink() {
+        function alternarIframe() {
             currentIndex = (currentIndex + 1) % links.length;
-            document.getElementById('linkDinamico').href = links[currentIndex];
+            document.getElementById('iframeDinamico').src = links[currentIndex];
         }
 
-        setInterval(alternarLink, 60000); // 60000 milissegundos = 60 segundos
+        setInterval(alternarIframe, 60000); // 60000 milissegundos = 60 segundos
     </script>
 </body>
 </html>
