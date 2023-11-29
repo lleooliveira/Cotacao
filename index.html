@@ -1,20 +1,25 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <title>Alternador de Links</title>
+</head>
+<body>
+    <a href="" id="linkDinamico">Visitar Link</a>
 
-<style>
-	body{
-		overflow:hidden;
-	}
+    <script>
+        var links = [
+            'https://app.powerbi.com/view?r=eyJrIjoiNGExZmMxODctNWZjMS00MDYyLTg4YjctNmI4NjY0YTA0Njk5IiwidCI6ImVmMjE1YTExLTk2ZTUtNDIwMy04YjRlLWE4YWUxYmJmY2M0MyJ9',
+            'https://app.powerbi.com/view?r=eyJrIjoiYmYzYmRhNDctYjMwOS00NGEyLTllZjYtOWQwZWE3MDM2ZmYzIiwidCI6ImVmMjE1YTExLTk2ZTUtNDIwMy04YjRlLWE4YWUxYmJmY2M0MyJ9'
+        ];
 
-	.ajuste{
-		margin-top: -10px;
-		margin-left: -10px;		
-	}
+        var currentIndex = 0;
 
-</style>
+        function alternarLink() {
+            currentIndex = (currentIndex + 1) % links.length;
+            document.getElementById('linkDinamico').href = links[currentIndex];
+        }
 
-	<body>
-
-		<iframe class="ajuste" title="Cotação Moeda" width="102%" height="113%" src="https://app.powerbi.com/reportEmbed?reportId=89ec232a-583f-4920-a67d-56053ceddb9f&autoAuth=true&ctid=ef215a11-96e5-4203-8b4e-a8ae1bbfcc43" frameborder="0" allowFullScreen="true"></iframe>
-
-	</body>
+        setInterval(alternarLink, 60000); // 60000 milissegundos = 60 segundos
+    </script>
+</body>
 </html>
