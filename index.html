@@ -1,39 +1,21 @@
-<!DOCTYPE html>
+
 <html>
-<head>
-    <title>Alternador de Iframes</title>
-    <style>
-        body {
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-        }
 
-        .iframe-fullscreen {
-            width: 100vw;
-            height: 100vh;
-            border: none;
-        }
-    </style>
-</head>
-<body>
-    <iframe class="iframe-fullscreen" id="iframeDinamico" src=""></iframe>
+<style>
+	body{
+		overflow:hidden;
+	}
 
-    <script>
-        var links = [
-            'https://app.powerbi.com/reportEmbed?reportId=89ec232a-583f-4920-a67d-56053ceddb9f&autoAuth=true&ctid=ef215a11-96e5-4203-8b4e-a8ae1bbfcc43', // Link 1
-            'https://app.powerbi.com/reportEmbed?reportId=8d1a7fa9-13f8-45f9-a2ec-fdb14c683604&autoAuth=true&ctid=ef215a11-96e5-4203-8b4e-a8ae1bbfcc43' // Link 2 (substitua pelo seu segundo link)
-        ];
+	.ajuste{
+		margin-top: -10px;
+		margin-left: -10px;		
+	}
 
-        var currentIndex = 0;
-        document.getElementById('iframeDinamico').src = links[currentIndex];
+</style>
 
-        function alternarIframe() {
-            currentIndex = (currentIndex + 1) % links.length;
-            document.getElementById('iframeDinamico').src = links[currentIndex];
-        }
+	<body>
 
-        setInterval(alternarIframe, 60000); // 60000 milissegundos = 60 segundos
-    </script>
-</body>
+		<iframe class="ajuste" title="Cotação Moeda" width="102%" height="113%" src="https://app.powerbi.com/reportEmbed?reportId=3fd9a317-dbbf-4ef8-80b7-998b6216d86d&autoAuth=true&ctid=ef215a11-96e5-4203-8b4e-a8ae1bbfcc43" frameborder="0" allowFullScreen="true"></iframe>
+
+	</body>
 </html>
